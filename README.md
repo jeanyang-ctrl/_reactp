@@ -1,3 +1,5 @@
+# 删除logo.svg App.test.js serviceworker.js setupTests.js app.css reportWebVitals.js
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
