@@ -4,7 +4,7 @@ import React from "react";
 import { Carousel, Flex, Grid, WingBlank } from "antd-mobile";
 
 // 导入axios
-import axios from "axios";
+// import axios from "axios";
 import {API} from '../../utils/api.js'
 // 导入导航菜单图片
 import Nav1 from "../../assets/images/nav-1.png";
@@ -54,7 +54,7 @@ export default class Index extends React.Component {
 
   // 获取轮播图数据的方法
   async getSwipers() {
-    const res = await axios.get(`http://localhost:8080/home/swiper`);
+    const res = await API.get(`/home/swiper`);
     this.setState({
       swipers: res.data.body,
       isSwiperLoaded: true,
@@ -76,7 +76,7 @@ export default class Index extends React.Component {
   }
 
   async getGroups() {
-    let { data: res } = await axios.get("http://localhost:8080/home/groups", {
+    let { data: res } = await API.get("/home/groups", {
       params: {
         area: "AREA%7C88cff55c-aaa4-e2e0",
       },
@@ -97,6 +97,7 @@ export default class Index extends React.Component {
     this.getGroups();
     this.getNews();
   }
+  
 
   // 渲染轮播图结构
   renderSwipers() {
